@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Howl, Howler} from 'howler';
 import {SpellService} from "../services/spell.service";
 
@@ -20,6 +20,7 @@ export class BattleComponent implements OnInit {
 
   private audio;
   private tree = Action.Menu;
+  private isMyTurn = true;
 
   enemy = {
     name: 'Zekrom',
@@ -48,7 +49,8 @@ export class BattleComponent implements OnInit {
     comp_4: 'RUN',
   };
 
-  constructor(private spellService: SpellService) { }
+  constructor(private spellService: SpellService) {
+  }
 
   ngOnInit() {
     console.log("BATTLE STARTED");
@@ -58,78 +60,110 @@ export class BattleComponent implements OnInit {
     this.start();
   }
 
-  start(){
+  start() {
     this.audio.play();
-    this.message.battle_text = "The battle is starting !";
+    //TODO: Message System
+    this.showMessage("The battle is starting !");
+
+    this.showMessage("What will " + this.ally.name + " do ?");
+
+  }
+
+  showMessage(msg: string) {
+    this.message.battle_text = msg;
+  }
+
+
+  doComp1() {
+    if (this.isMyTurn) {
+      switch (this.tree) {
+        case Action.Menu: {
+          this.message.comp_1 = this.ally.comp_1;
+          this.message.comp_2 = this.ally.comp_2;
+          this.message.comp_3 = this.ally.comp_3;
+          this.message.comp_4 = this.ally.comp_4;
+          this.tree++;
+          break;
+        }
+        case Action.Fight: {
+          let spell = this.spellService.get(this.ally.comp_1);
+          this.showMessage(this.ally.name + " used " + this.ally.comp_1 + " !");
+          spell(this.enemy, this.ally);
+          this.endTurn();
+          break;
+        }
+      }
+    }
+  }
+
+  doComp2() {
+    if (this.isMyTurn) {
+      switch (this.tree) {
+        case Action.Menu: {
+
+
+          break;
+        }
+        case Action.Fight: {
+          let spell = this.spellService.get(this.ally.comp_2);
+          spell(this.enemy, this.ally);
+          this.endTurn();
+          break;
+        }
+      }
+    }
+  }
+
+  doComp3() {
+    if (this.isMyTurn) {
+      switch (this.tree) {
+        case Action.Menu: {
+
+
+          break;
+        }
+        case Action.Fight: {
+          let spell = this.spellService.get(this.ally.comp_3);
+          spell(this.enemy, this.ally);
+          this.endTurn();
+          break;
+        }
+      }
+    }
+  }
+
+  doComp4() {
+    if (this.isMyTurn) {
+      switch (this.tree) {
+        case Action.Menu: {
+
+
+          break;
+        }
+        case Action.Fight: {
+          let spell = this.spellService.get(this.ally.comp_4);
+          spell(this.enemy, this.ally);
+          this.endTurn();
+          break;
+        }
+      }
+    }
+  }
+
+  endTurn() {
+    console.log("End Turn");
+    this.isMyTurn = false;
+    this.message.comp_1 = '';
+    this.message.comp_2 = '';
+    this.message.comp_3 = '';
+    this.message.comp_4 = '';
+    this.tree = Action.Menu;
     setTimeout(() => {
-      this.message.battle_text = "What will "+this.ally.name+" do ?";
-    }, 3000);
-  }
-
-  doComp1(){
-    switch (this.tree) {
-      case Action.Menu: {
-        this.message.comp_1 = this.ally.comp_1;
-        this.message.comp_2 = this.ally.comp_2;
-        this.message.comp_3 = this.ally.comp_3;
-        this.message.comp_4 = this.ally.comp_4;
-        this.tree++;
-        break;
-      }
-      case Action.Fight: {
-        let spell = this.spellService.get(this.ally.comp_1);
-        spell(this.enemy, this.ally);
-        break;
-      }
-    }
-
-
-  }
-
-  doComp2(){
-    switch (this.tree) {
-      case Action.Menu: {
-
-
-        break;
-      }
-      case Action.Fight: {
-        let spell = this.spellService.get(this.ally.comp_2);
-        spell(this.enemy, this.ally);
-        break;
-      }
-    }
-
-  }
-
-  doComp3(){
-    switch (this.tree) {
-      case Action.Menu: {
-
-
-        break;
-      }
-      case Action.Fight: {
-        let spell = this.spellService.get(this.ally.comp_3);
-        spell(this.enemy, this.ally);
-        break;
-      }
-    }
-
-  }
-
-  doComp4(){
-    switch (this.tree) {
-      case Action.Menu: {
-
-
-        break;
-      }
-      case Action.Fight: {
-        let spell = this.spellService.get(this.ally.comp_4);
-        spell(this.enemy, this.ally);
-        break;
-      }
-    }
+      this.message.comp_1 = 'FIGHT';
+      this.message.comp_2 = 'BAG';
+      this.message.comp_3 = 'POKéMON';
+      this.message.comp_4 = 'RUN';
+      this.isMyTurn = true;
+    }, 3000)
   }
 }
