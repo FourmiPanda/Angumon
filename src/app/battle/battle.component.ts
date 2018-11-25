@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Howl, Howler} from 'howler';
 import {SpellService} from "../services/spell.service";
+import {PokemonModel} from "../core/pokemon.model";
 
 enum Action {
   Menu = 0,
@@ -21,7 +22,17 @@ export class BattleComponent implements OnInit {
   private audio;
   private tree = Action.Menu;
   private isMyTurn = true;
-
+  enemy = new PokemonModel({
+    name: 'Rayquaza',
+    lvl: '100',
+    url: 'assets/images/Rayquaza-back_XY.gif',
+    hp: '200',
+    _base_hp: '200',
+    comp_1: 'Vol',
+    comp_2: 'Soin',
+    comp_3: 'Colère',
+    comp_4: 'Dracochoc',
+  })
   enemy = {
     name: 'Zekrom',
     lvl: '100',
@@ -61,7 +72,7 @@ export class BattleComponent implements OnInit {
   }
 
   start() {
-    this.audio.play();
+    // this.audio.play();
     //TODO: Message System
     this.showMessage("The battle is starting !");
 
