@@ -52,7 +52,7 @@ export class BattleComponent implements OnInit {
   }
 
   start() {
-    // this.audio.play();
+    this.audio.play();
     //TODO: Message System
     this.enemy = new PokemonModel({
       name: 'Zekrom',

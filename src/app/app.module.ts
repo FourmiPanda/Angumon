@@ -11,7 +11,7 @@ import {
   MatCardModule, MatDialogModule,
   MatIconModule,
   MatProgressBarModule,
-  MatProgressSpinnerModule, MatToolbarModule
+  MatProgressSpinnerModule, MatSidenavModule, MatToolbarModule
 } from "@angular/material";
 import {FlexLayoutModule} from "@angular/flex-layout";
 
@@ -32,6 +32,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
+    MatSidenavModule,
     MatIconModule,
     MatDialogModule
   ],

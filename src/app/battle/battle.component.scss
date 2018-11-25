@@ -12,21 +12,12 @@ body {
   align-items: center;
 }
 
-.title{
-  position: relative;
-  margin-top: 10px;
-  color: white;
-  text-align: center;
-  font-size: 28px;
-  text-transform: uppercase;
-  font-family: "Roboto Condensed";
-}
+
 
 .battle-scene{
   position: relative;
   margin: auto;
   display: block;
-  margin-top: 3%;
   width: 600px;
   height: 420px;
   background: #F8F8F8;
@@ -348,4 +339,14 @@ body {
 
 
 
+}
+#app{
+  height: 100%;
+}
+.example-container{
+  height: 100%;
+}
+
+.drawer-content{
+  width: 250px;
 }
