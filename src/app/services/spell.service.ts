@@ -7,12 +7,13 @@ export class SpellService {
 
   constructor() { }
 
-  get(name: string){
+  get(comp){
     let spell;
-    switch (name.toLowerCase()) {
+    switch (comp.name.toLowerCase()) {
       case 'vol': {
         spell = function (enemy, ally) {
           enemy.hp = Math.max(parseInt(enemy.hp) - 30,0);
+          comp.pp--;
         };
         break;
       }
@@ -20,18 +21,21 @@ export class SpellService {
         spell = function (enemy, ally) {
           enemy.hp = Math.max(parseInt(enemy.hp) - 100,0);
           ally.hp =  Math.max(parseInt(ally.hp) - 20,0);
+          comp.pp--;
         };
         break;
       }
       case 'colère': {
         spell = function (enemy, ally) {
           enemy.hp =  Math.max(parseInt(enemy.hp) - 70,0);
+          comp.pp--;
         };
         break;
       }
       case 'soin': {
         spell = function (enemy, ally) {
-          ally.hp = Math.min(parseInt(ally.hp) + 50, ally._base_hp);
+          ally.hp = Math.min(parseInt(ally.hp) + 70, ally.base_hp);
+          comp.pp--;
         };
         break;
       }

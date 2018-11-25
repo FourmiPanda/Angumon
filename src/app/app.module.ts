@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartComponent } from './start/start.component';
-import { BattleComponent } from './battle/battle.component';
+import {BattleComponent, DialogOverview} from './battle/battle.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatDialogModule,
   MatIconModule,
   MatProgressBarModule,
   MatProgressSpinnerModule, MatToolbarModule
@@ -19,7 +19,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
   declarations: [
     AppComponent,
     StartComponent,
-    BattleComponent
+    BattleComponent,
+    DialogOverview
   ],
   imports: [
     BrowserModule,
@@ -32,8 +33,12 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogOverview
+  ]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@
     <div class="box-top-left">
       <h2 class="pokemon">{{enemy.name}}</h2>
       <div class="hp-bar-top">
-        <div class="hp-bar-fill" [style.width.%]="(enemy.hp/enemy._base_hp)*100" ></div>
+        <div class="hp-bar-fill" [style.width.%]="(enemy.hp/enemy.base_hp)*100"></div>
       </div>
       <h4 class="level">Lv{{enemy.lvl}}</h4>
     </div>
@@ -18,7 +18,7 @@
     <div class="box-bottom-right">
       <h2 class="pokemon">{{ally.name}}</h2>
       <div class="hp-bar-bottom">
-        <div class="hp-bar-fill" [style.width.%]="(ally.hp/ally._base_hp)*100"></div>
+        <div class="hp-bar-fill" [style.width.%]="(ally.hp/ally.base_hp)*100"></div>
       </div>
       <h4 class="level">Lv{{ally.lvl}}</h4>
       <h4 class="hp">{{ally.hp}}</h4>
@@ -34,3 +34,5 @@
         <h4 class="battle-text-bottom-right" (click)="doComp4()">{{message.comp_4}}</h4>
       </div>
     </div>
+  </div>
+</div>
