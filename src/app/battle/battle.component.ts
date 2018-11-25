@@ -32,15 +32,8 @@ export class BattleComponent implements OnInit {
     comp_2: 'Soin',
     comp_3: 'Colère',
     comp_4: 'Dracochoc',
-  })
-  enemy = {
-    name: 'Zekrom',
-    lvl: '100',
-    url: 'assets/images/Zekrom_XY.gif',
-    hp: '150',
-    _base_hp: '150'
+  });
 
-  };
   ally = {
     name: 'Rayquaza',
     lvl: '100',
