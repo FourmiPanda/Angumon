@@ -1,8 +1,6 @@
 /**
  * A pokemon model
  */
-import {el} from "@angular/platform-browser/testing/src/browser_util";
-
 export class PokemonModel {
 
   url: string;
