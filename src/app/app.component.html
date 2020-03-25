@@ -1,3 +1,4 @@
+<!-- partie de navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="/start">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +21,24 @@
     </ul>
   </div>
 </nav>
-<div style="height: 100vh">
-  <router-outlet></router-outlet>
+
+
+<!-- principal container de l'app -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- footer de l'application -->
+<div class="text-center">
+  <p>
+    Jouer et conbattez !
+  </p>
 </div>
