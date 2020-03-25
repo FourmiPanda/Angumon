@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  submitted = false;
+  loading = false;
+  loginForm: FormGroup;
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit(form: FormGroup) {
+
+  }
 }
