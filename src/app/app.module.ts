@@ -14,13 +14,15 @@ import {
   MatProgressSpinnerModule, MatSidenavModule, MatToolbarModule
 } from "@angular/material";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     BattleComponent,
-    DialogOverview
+    DialogOverview,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
