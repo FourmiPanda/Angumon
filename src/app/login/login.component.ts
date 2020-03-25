@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
     if (this.authentService.isAuthenticated()) {
       console.log('implement call start route');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/start']);
     }
 
 
@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.authentService.login(this.f.username.value, this.f.password.value);
     this.loading = false;
+    this.router.navigate(['/start']);
 
   }
 }
