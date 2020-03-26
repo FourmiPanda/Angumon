@@ -16,6 +16,7 @@ import {
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatSidenavModule,
     MatIconModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
