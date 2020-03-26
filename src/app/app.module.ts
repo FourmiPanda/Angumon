@@ -17,6 +17,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {httpInterceptorProviders} from './interceptors';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     DialogOverview
