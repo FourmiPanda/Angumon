@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {httpInterceptorProviders} from './interceptors';
+import { CustomDateFormatterPipe } from './pipe/custom-date-formatter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {httpInterceptorProviders} from './interceptors';
     StartComponent,
     BattleComponent,
     DialogOverview,
-    LoginComponent
+    LoginComponent,
+    CustomDateFormatterPipe
   ],
   imports: [
     BrowserModule,
