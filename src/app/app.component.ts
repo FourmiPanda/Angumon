@@ -7,6 +7,7 @@ import {AuthentService} from './services/authent.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  date = new Date() ;
 
   constructor(private authentService: AuthentService) {
   }
